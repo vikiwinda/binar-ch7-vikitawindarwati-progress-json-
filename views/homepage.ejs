@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+    <title>Homepage</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                  <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    LOGIN
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  
+                  <div class="form-group row d-flex justify-content-center">
+                    <form method="POST" action="/homepage/login">
+                        <div class="form-group font-weight-bold" style="font-size: 120%;">
+                          <label for="username">User Name</label>
+                          <input style="color: gray"type="text" class="form-control" onfocus="this.value='';this.style.color='black' " id="username" name="username" value="admin">
+                        </div>
+                        <div class="form-group mt-3 font-weight-bold" style= "font-size: 120%">
+                          <label for="password">Password</label>
+                          <input type="password" class="form-control" id="password" name="password">
+                        </div>
+                        <button type="submit" class="btn btn-dark text-center mt-3" style="width: 100%;">Submit</button>
+                    </form>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button class="btn btn-dark collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    REGISTER
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <form method="POST" action="/homepage/register">
+                        <%- include('partials/form') %>
+                        <div class="form-group row" style="margin-left: 64%;">
+                            <button type="submit" class="btn btn-dark mt-5" style="width: 10em;">REGISTER</button>
+                        </div>
+                    </form>
+              </div>
+            </div>
+          </div>    
+    </div>
+</body>
+</html>
