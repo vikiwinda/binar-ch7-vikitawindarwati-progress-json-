@@ -34,5 +34,24 @@ module.exports = {
     whoami: (req, res) => {
         const currentUser = req.user;
         res.json(currentUser)
-    }
+    },
+
+    // checkRole: async(req, res) => {
+    //     const checkingRole = await User.findOne({
+    //         where: { role: req.user.role }
+    //     });
+    //     if (checkingRole === "Player") {
+    //         const playerInfo = await User.findByPk({
+    //             where: {id: req.user.id }
+    //         });
+    //         res.json(playerInfo)
+    //     }
+    //     else if(checkingRole === "Admin") {
+    //         const adminPrivilege = await User.findAll({
+
+    //         })
+    //         res.json(adminPrivilege)
+    //     }
+        
+    // } 
 }

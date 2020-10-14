@@ -11,14 +11,20 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      // Fight.belongsToMany(models.User, {
+      //   through: 'Rooms',
+      //   as: 'users',
+      //   foreignKey: 'FightId',
+      //   otherKey: 'UserId'
+      // })
+      Room.belongsToMany(models.Fight, { through: 'RoomFight' });
+      Room.hasMany(models.RoomFight);
     }
   };
   Room.init({
-    UserId: DataTypes.INTEGER,
-    FightId: DataTypes.INTEGER,
     room_id: DataTypes.STRING,
     Player1: DataTypes.STRING,
-    Player2: DataTypes.STRING
+    Player2: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Room',

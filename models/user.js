@@ -16,12 +16,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.belongsToMany(models.Fight, {
-        through: 'Rooms',
-        as: 'fights',
-        foreignKey: 'UserId',
-        otherKey: 'FightId'
-      })
+      // User.belongsToMany(models.Fight, {
+      //   through: 'Rooms',
+      //   as: 'fights',
+      //   foreignKey: 'UserId',
+      //   otherKey: 'FightId'
+      // })
+      User.hasMany(models.UserRoomFight);
+      User.belongsToMany(models.RoomFight, { through: 'UserRoomFight' });
     }
 
     //method for encryption

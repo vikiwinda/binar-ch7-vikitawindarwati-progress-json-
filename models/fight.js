@@ -11,12 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Fight.belongsToMany(models.User, {
-        through: 'Rooms',
-        as: 'users',
-        foreignKey: 'FightId',
-        otherKey: 'UserId'
-      })
+      Fight.belongsToMany(models.Room, { through: 'RoomFight' });
+      Fight.hasMany(models.RoomFight);
     }
   };
   Fight.init({

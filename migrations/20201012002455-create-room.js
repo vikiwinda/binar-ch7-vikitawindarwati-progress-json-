@@ -8,12 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      UserId: {
-        type: Sequelize.INTEGER
-      },
-      FightId: {
-        type: Sequelize.INTEGER
-      },
       room_id: {
         allowNull: false,
         type: Sequelize.STRING
